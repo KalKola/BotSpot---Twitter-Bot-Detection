@@ -24,7 +24,7 @@ y_pred = clf.predict(X_test)
 
 print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
 
-print(clf.predict([[849, 36551, 803, 0, 0]]))
+print(clf.predict([[324, 285, 16023, 210, 0]]))
 
 
 

@@ -21,7 +21,7 @@ def search(ck, ck_secret, at, at_secret, hashtag):
 
             fileWriter = csv.writer(file)
 
-            fileWriter.writerow(['Timestamp', 'Text', 'Username', 'Hashtags', 'Follower no.', 'User Location', 'Retweet no.', 'Favorite no.', 'Profile Image'])
+            fileWriter.writerow(['Timestamp', 'Text', 'Username', 'Hashtags', 'Follower no.', 'User Location', 'Retweet no.', 'Favorite no.', 'Profile Image', 'Profile', 'Profile Link Color'])
 
 
             for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(100):
@@ -34,7 +34,9 @@ def search(ck, ck_secret, at, at_secret, hashtag):
                             tweet.user.location.encode('utf-8'),
                             tweet.retweet_count,
                             tweet.favorite_count,
-                            tweet.user.profile_image_url])
+                            tweet.user.profile_image_url,
+                            tweet.user.description.encode('utf-8'),
+                            tweet.user.profile_link_color])
 
 
 search(ck, ck_secret, at, at_secret, hashtag)
