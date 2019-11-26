@@ -21,14 +21,19 @@ def search(ck, ck_secret, at, at_secret, hashtag):
 
             fileWriter = csv.writer(file)
 
-            fileWriter.writerow(['Timestamp', 'Text', 'Username', 'Hashtags', 'Follower no.', 'User Location', 'Retweet no.', 'Favorite no.', 'Profile Image', 'Profile', 'Profile Link Color'])
+            fileWriter.writerow(['Username', 'Text', 'Timestamp', 'Hashtags', 'Follower no.',
+                                 'User Location', 'Retweet no.', 'Favorite no.', 'Profile Image',
+                                 'Profile Description', 'Profile Link Color', 'Profile Background Color',
+                                 'Name', 'Statuses Count', 'Friends Count', 'Favorites Count', 'Listed Count',
+                                 'Time Zone', 'Default Profile', 'Profile Background Color'])
 
 
             for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(100):
 
-                fileWriter.writerow([tweet.created_at,
-                            tweet.full_text.replace('\n', ' ').encode('utf-8'),
+                fileWriter.writerow([
                             tweet.user.screen_name.encode('utf-8'),
+                            tweet.full_text.replace('\n', ' ').encode('utf-8'),
+                            tweet.user.created_at,
                             [hashtags['text'].encode('utf-8') for hashtags in tweet._json['entities']['hashtags']],
                             tweet.user.followers_count,
                             tweet.user.location.encode('utf-8'),
@@ -36,7 +41,16 @@ def search(ck, ck_secret, at, at_secret, hashtag):
                             tweet.favorite_count,
                             tweet.user.profile_image_url,
                             tweet.user.description.encode('utf-8'),
-                            tweet.user.profile_link_color])
+                            tweet.user.profile_link_color,
+                            tweet.user.profile_background_color,
+                            tweet.user.name.encode('utf-8'),
+                            tweet.user.statuses_count,
+                            tweet.user.friends_count,
+                            tweet.user.favourites_count,
+                            tweet.user.listed_count,
+                            tweet.user.time_zone,
+                            tweet.user.default_profile_image,
+                            tweet.user.profile_background_color])
 
-
+#convert profile link color to Boolean for 1DA1F2 (blue)
 search(ck, ck_secret, at, at_secret, hashtag)
