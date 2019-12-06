@@ -9,7 +9,8 @@ df = df.fillna(0)
 
 df.head()
 
-X = df[['favourites_count', 'followers_count', 'statuses_count', 'friends_count', 'default_profile']]
+X = df[['favourites_count', 'followers_count', 'statuses_count', 'friends_count',
+        'listed_count', 'default_profile', 'default_profile_image']]
 y = df['Bot']
 
 
@@ -24,7 +25,7 @@ y_pred = clf.predict(X_test)
 
 print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
 
-print(clf.predict([[324, 285, 16023, 210, 0]]))
+#print(clf.predict([[324, 285, 16023, 210, 0]]))
 
 
 
