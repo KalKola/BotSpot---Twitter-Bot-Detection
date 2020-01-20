@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e94ac799-24f6-421e-a438-886d0b948d7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TestData.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/randomForestNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/randomForestNew.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,25 +22,40 @@
   </component>
   <component name="ProjectId" id="1T493YJiDKj1bCSUeikutui8Dvl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2/main.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Python.randomForestNew">
+    <configuration name="API" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BotDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/API.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BotDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,28 +122,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="miller" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BotDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Work/Advanced Security/Lab 3/miller.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="randomForestNew" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BotDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,12 +147,24 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.randomForestNew" />
+        <item itemvalue="Python.API" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.miller" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -233,6 +234,16 @@
       <workItem from="1575562348689" duration="1057000" />
       <workItem from="1575567078985" duration="5000" />
       <workItem from="1575624707969" duration="212000" />
+      <workItem from="1575739845042" duration="264000" />
+      <workItem from="1575740672796" duration="189000" />
+      <workItem from="1575889211357" duration="657000" />
+      <workItem from="1576063077463" duration="5000" />
+      <workItem from="1576961496213" duration="210000" />
+      <workItem from="1577291792374" duration="11000" />
+      <workItem from="1579091762895" duration="466000" />
+      <workItem from="1579092302347" duration="618000" />
+      <workItem from="1579181065808" duration="17000" />
+      <workItem from="1579519396143" duration="5618000" />
     </task>
     <servers />
   </component>
@@ -252,13 +263,40 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state width="876" height="200" key="GridCell.Tab.0.bottom" timestamp="1579527978408">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579527978408" />
+    <state width="876" height="200" key="GridCell.Tab.0.center" timestamp="1579527978407">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
+    <state width="876" height="200" key="GridCell.Tab.0.left" timestamp="1579527978407">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
+    <state width="876" height="200" key="GridCell.Tab.0.right" timestamp="1579527978407">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1576961526480">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576961526480" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1579519462533">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579519462533" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BotDetection$randomForest.coverage" NAME="randomForest Coverage Results" MODIFIED="1572877802839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$randomForestNew.coverage" NAME="randomForestNew Coverage Results" MODIFIED="1579524810293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1575302736679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 4/RSA" />
+    <SUITE FILE_PATH="coverage/BotDetection$API.coverage" NAME="API Coverage Results" MODIFIED="1579524116712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1575301771088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2" />
     <SUITE FILE_PATH="coverage/BotDetection$miller.coverage" NAME="miller Coverage Results" MODIFIED="1573564869222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
-    <SUITE FILE_PATH="coverage/BotDetection$randomForest.coverage" NAME="randomForest Coverage Results" MODIFIED="1572877802839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1575740680047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$AES.coverage" NAME="AES Coverage Results" MODIFIED="1573557632697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
-    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1575562854123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BotDetection$randomForestNew.coverage" NAME="randomForestNew Coverage Results" MODIFIED="1575563400884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
