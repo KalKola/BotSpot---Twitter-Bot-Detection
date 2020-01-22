@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e94ac799-24f6-421e-a438-886d0b948d7e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/randomForestNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/randomForestNew.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +245,8 @@
       <workItem from="1579092302347" duration="618000" />
       <workItem from="1579181065808" duration="17000" />
       <workItem from="1579519396143" duration="5618000" />
+      <workItem from="1579529663611" duration="1049000" />
+      <workItem from="1579538769365" duration="102000" />
     </task>
     <servers />
   </component>
@@ -264,34 +267,34 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="876" height="200" key="GridCell.Tab.0.bottom" timestamp="1579527978408">
+    <state width="1249" height="198" key="GridCell.Tab.0.bottom" timestamp="1579538870994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="876" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579527978408" />
-    <state width="876" height="200" key="GridCell.Tab.0.center" timestamp="1579527978407">
+    <state width="1249" height="198" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579538870994" />
+    <state width="1249" height="198" key="GridCell.Tab.0.center" timestamp="1579538870994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="876" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
-    <state width="876" height="200" key="GridCell.Tab.0.left" timestamp="1579527978407">
+    <state width="1249" height="198" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579538870994" />
+    <state width="1249" height="198" key="GridCell.Tab.0.left" timestamp="1579538870992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="876" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
-    <state width="876" height="200" key="GridCell.Tab.0.right" timestamp="1579527978407">
+    <state width="1249" height="198" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579538870992" />
+    <state width="1249" height="198" key="GridCell.Tab.0.right" timestamp="1579538870994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="876" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579527978407" />
+    <state width="1249" height="198" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579538870994" />
     <state x="277" y="54" key="SettingsEditor" timestamp="1576961526480">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576961526480" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1579519462533">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1579538785913">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579519462533" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579538785913" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BotDetection$randomForest.coverage" NAME="randomForest Coverage Results" MODIFIED="1572877802839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BotDetection$randomForestNew.coverage" NAME="randomForestNew Coverage Results" MODIFIED="1579524810293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$randomForestNew.coverage" NAME="randomForestNew Coverage Results" MODIFIED="1579538789774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1575302736679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 4/RSA" />
     <SUITE FILE_PATH="coverage/BotDetection$API.coverage" NAME="API Coverage Results" MODIFIED="1579524116712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1575301771088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2" />

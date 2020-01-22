@@ -78,4 +78,3 @@ df['Protected'] = df['Protected'].astype(int)
 df['Verified'] = df['Verified'].astype(int)
 df['Notifications'] = df['Notifications'].astype(int)
 df['Contributors Enabled'] = df['Contributors Enabled'].astype(int)
-
