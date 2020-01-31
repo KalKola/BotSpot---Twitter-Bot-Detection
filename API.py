@@ -7,7 +7,7 @@ ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
 ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
 at = '1077691432360726529-6ohW6KvrlS3qlXUYvhXzqcUUmM38u0'
 at_secret = '42P1J5wVfO18v5yg23uGn2XS19WzNNARw1uMft1v25q1k'
-hashtag = '#toystory'
+hashtag = '#maga'
 
 def search(ck, ck_secret, at, at_secret, hashtag):
 
@@ -22,14 +22,14 @@ def search(ck, ck_secret, at, at_secret, hashtag):
 
             fileWriter = csv.writer(file)
 
-            fileWriter.writerow(['Name', 'Screen Name', 'Statuses Count', 'Followers Count', 'Friends Count',
-                                 'Favorites Count', 'Listed Count', 'Time Zone', 'Location', 'Default Profile',
-                                 'Default Profile Image', 'Geo Enabled', 'Text Color', 'Background Tile',
-                                 'Background Color', 'Link Color', 'Protected', 'Verified', 'Notifications',
-                                 'Description', 'Contributors Enabled', 'Following', 'Creation Date'])
+            fileWriter.writerow(['name', 'screen_name', 'statuses_count', 'followers_count', 'friends_count',
+                                 'favourites_count', 'listed_count', 'time_zone', 'location', 'default_profile',
+                                 'default_profile_image', 'geo_enabled', 'profile_text_color', 'profile_background_tile',
+                                 'profile_background_color', 'profile_link_color', 'protected', 'verified', 'notifications',
+                                 'description', 'contributors_enabled', 'following', 'created_at'])
 
 
-            for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(100):
+            for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(1000):
 
                 fileWriter.writerow([
                             tweet.user.name.encode('utf-8'),

@@ -60,21 +60,35 @@ print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
 
-#print(clf.predict([[324, 285, 16023, 210, 0]]))
-
-
 print("--------------------------------------------------")
 print("                Cleaning API Tweets               ")
 print("--------------------------------------------------")
 
-df = pd.read_csv("dataset.csv")
+df2 = pd.read_csv("dataset.csv")
 
 # Convert TRUE FALSE to 1 0
-df['Default Profile'] = df['Default Profile'].astype(int)
-df['Default Profile Image'] = df['Default Profile Image'].astype(int)
-df['Geo Enabled'] = df['Geo Enabled'].astype(int)
-df['Background Tile'] = df['Background Tile'].astype(int)
-df['Protected'] = df['Protected'].astype(int)
-df['Verified'] = df['Verified'].astype(int)
-df['Notifications'] = df['Notifications'].astype(int)
-df['Contributors Enabled'] = df['Contributors Enabled'].astype(int)
+df2['default_profile'] = df2['default_profile'].astype(int)
+df2['default_profile_image'] = df2['default_profile_image'].astype(int)
+df2['geo_enabled'] = df2['geo_enabled'].astype(int)
+df2['profile_background_tile'] = df2['profile_background_tile'].astype(int)
+df2['protected'] = df2['protected'].astype(int)
+df2['verified'] = df2['verified'].astype(int)
+df2['notifications'] = df2['notifications'].astype(int)
+df2['contributors_enabled'] = df2['contributors_enabled'].astype(int)
+
+print("--------------------------------------------------")
+print("                Predicting Bots                   ")
+print("--------------------------------------------------")
+
+botCount = 0
+for i, j in df2.iterrows():
+    isBot = clf.predict([[j.statuses_count, j.followers_count, j.friends_count, j.favourites_count,
+                        j.listed_count, j.default_profile, j.default_profile_image, j.geo_enabled,
+                        j.profile_background_tile, j.protected, j.verified, j.notifications,
+                        j.contributors_enabled]])
+
+    if isBot == 1:
+        # Save Bot Results for Printing
+        botCount += 1
+
+print("Bot Count: " + str(botCount))
