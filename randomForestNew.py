@@ -45,7 +45,7 @@ X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count'
 y = df['bot']
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=20)
 
 clf = RandomForestClassifier(n_estimators = 100)
 
@@ -60,21 +60,21 @@ print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
 
-print("--------------------------------------------------")
-print("                Cleaning API Tweets               ")
-print("--------------------------------------------------")
+# print("--------------------------------------------------")
+# print("                Cleaning API Tweets               ")
+# print("--------------------------------------------------")
 
 df2 = pd.read_csv("dataset.csv")
 
 # Convert TRUE FALSE to 1 0
-df2['default_profile'] = df2['default_profile'].astype(int)
-df2['default_profile_image'] = df2['default_profile_image'].astype(int)
-df2['geo_enabled'] = df2['geo_enabled'].astype(int)
-df2['profile_background_tile'] = df2['profile_background_tile'].astype(int)
-df2['protected'] = df2['protected'].astype(int)
-df2['verified'] = df2['verified'].astype(int)
-df2['notifications'] = df2['notifications'].astype(int)
-df2['contributors_enabled'] = df2['contributors_enabled'].astype(int)
+# df2['default_profile'] = df2['default_profile'].astype(int)
+# df2['default_profile_image'] = df2['default_profile_image'].astype(int)
+# df2['geo_enabled'] = df2['geo_enabled'].astype(int)
+# df2['profile_background_tile'] = df2['profile_background_tile'].astype(int)
+# df2['protected'] = df2['protected'].astype(int)
+# df2['verified'] = df2['verified'].astype(int)
+# df2['notifications'] = df2['notifications'].astype(int)
+# df2['contributors_enabled'] = df2['contributors_enabled'].astype(int)
 
 print("--------------------------------------------------")
 print("                Predicting Bots                   ")

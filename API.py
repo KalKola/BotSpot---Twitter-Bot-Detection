@@ -43,20 +43,20 @@ def search(ck, ck_secret, at, at_secret, hashtag):
 
                             tweet.user.time_zone,
                             tweet.user.location.encode('utf-8'),
-                            tweet.user.default_profile,
-                            tweet.user.default_profile_image,
-                            tweet.user.geo_enabled,
+                            int(tweet.user.default_profile),
+                            int(tweet.user.default_profile_image),
+                            int(tweet.user.geo_enabled),
                             tweet.user.profile_text_color,
-                            tweet.user.profile_background_tile,
+                            int(tweet.user.profile_background_tile),
                             tweet.user.profile_background_color,
                             tweet.user.profile_link_color,
 
-                            tweet.user.protected,
-                            tweet.user.verified,
-                            tweet.user.notifications,
+                            int(tweet.user.protected),
+                            int(tweet.user.verified),
+                            int(tweet.user.notifications),
 
                             tweet.user.description.encode('utf-8'),
-                            tweet.user.contributors_enabled,
+                            int(tweet.user.contributors_enabled),
                             tweet.user.following,
                             tweet.user.created_at
                             ])
