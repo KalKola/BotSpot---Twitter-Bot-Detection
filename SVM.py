@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn import metrics
+from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -20,7 +21,11 @@ scaling = MinMaxScaler(feature_range=(-1,1)).fit(X_train)
 X_train = scaling.transform(X_train)
 X_test = scaling.transform(X_test)
 
-clf = svm.SVC(kernel = 'linear')
+# using preprocessing to normalize the data
+X_train = preprocessing.scale(X_train)
+X_test = preprocessing.scale(X_test)
+
+clf = svm.SVC(kernel = 'linear', random_state=0)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 

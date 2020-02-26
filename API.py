@@ -7,7 +7,7 @@ ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
 ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
 at = '1077691432360726529-6ohW6KvrlS3qlXUYvhXzqcUUmM38u0'
 at_secret = '42P1J5wVfO18v5yg23uGn2XS19WzNNARw1uMft1v25q1k'
-hashtag = '#maga'
+hashtag = '#cheese'
 
 def search(ck, ck_secret, at, at_secret, hashtag):
 

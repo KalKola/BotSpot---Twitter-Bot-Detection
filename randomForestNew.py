@@ -1,5 +1,6 @@
-from sklearn import datasets
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
@@ -45,9 +46,9 @@ X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count'
 y = df['bot']
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=10)
 
-clf = RandomForestClassifier(n_estimators = 100)
+clf = RandomForestClassifier(n_estimators = 100, random_state=10)
 
 clf.fit(X_train, y_train)
 
@@ -90,5 +91,31 @@ for i, j in df2.iterrows():
     if isBot == 1:
         # Save Bot Results for Printing
         botCount += 1
+        print(j['screen_name'])
 
 print("Bot Count: " + str(botCount))
+
+
+# feature importance visualization
+f_imp = clf.feature_importances_
+
+# compute the standard deviation for each feature
+#std = np.std([tree.feature_importances_ for tree in clf.estimators_], axis=0)
+
+#sort the array of features by importance
+indices = np.argsort(f_imp)[::-1]
+
+print("-------------------")
+print("Feature Importance")
+print("-------------------")
+
+for x in range(X.shape[1]):
+    print("%d. feature %d (%f)" % (x + 1, indices[x], f_imp[indices[x]]))
+
+# plot feature importance on graph
+plt.figure()
+plt.title("Random Forest Feature Importance")
+plt.bar(range(X.shape[1]), f_imp[indices], color="g", align="center")
+plt.xticks(range(X.shape[1]), indices)
+#plt.xlim([-1, X.shape[1]])
+plt.show()
