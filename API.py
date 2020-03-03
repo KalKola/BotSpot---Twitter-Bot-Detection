@@ -14,7 +14,7 @@ def search(ck, ck_secret, at, at_secret, hashtag):
     #using access tokens and consumer keys to set up the API
     auth = tweepy.OAuthHandler(ck, ck_secret)
     auth.set_access_token(at, at_secret)
-    api = tweepy.API(auth)
+    api = tweepy.API(auth, wait_on_rate_limit=True)
 
     #create the csv file to write the data to
     fname = 'dataset'
@@ -29,7 +29,7 @@ def search(ck, ck_secret, at, at_secret, hashtag):
                                  'description', 'contributors_enabled', 'following', 'created_at'])
 
 
-            for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(1000):
+            for tweet in tweepy.Cursor(api.search, q=hashtag, lang="en", tweet_mode='extended').items(100):
 
                 fileWriter.writerow([
                             tweet.user.name.encode('utf-8'),
