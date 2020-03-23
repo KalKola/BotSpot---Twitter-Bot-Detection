@@ -11,55 +11,44 @@ df = df.fillna(0)
 
 df.head()
 
-# statuses_count
-# followers_count
-# friends_count
-# favourites_count
-# listed_count
-# default_profile
-# default_profile_image
-# geo_enabled
-# profile_background_tile
-# protected
-# verified
-# notifications
-# contributors_enabled
 
-# name
-# screen_name
-# time_zone (108 unique)
-# location (2109 unique)
-# profile_text_color (405 unique)
-# profile_background_color (531 unique)
-# profile_link_color (895 unique)
-# description
-# following
-# created_at
+# print("--------------------------------------")
+# print(df['following'].describe())
+# print("--------------------------------------")
 
-print("--------------------------------------")
-print(df['following'].describe())
-print("--------------------------------------")
+# For Feature Importance Graph
+fImpGraph = ['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
+        'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
+        'protected', 'verified', 'notifications', 'contributors_enabled']
 
 X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
         'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
         'protected', 'verified', 'notifications', 'contributors_enabled']]
 y = df['bot']
 
+# split the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=10)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=10)
-
-clf = RandomForestClassifier(n_estimators = 100, random_state=10)
+# initializing the RF model with optimized parameters - rfTest()
+clf = RandomForestClassifier(n_estimators=1000,
+                             max_depth=20,
+                             max_features='auto',
+                             oob_score='TRUE',
+                             bootstrap='TRUE',
+                             random_state=10)
 
 clf.fit(X_train, y_train)
 
 y_pred = clf.predict(X_test)
 
-print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
+# generating accuracy metrics, confusion matrix, and classification report
+rf_acc_raw = metrics.accuracy_score(y_test, y_pred)
+rf_acc_mat = confusion_matrix(y_test, y_pred)
+rf_class_rep = classification_report(y_test, y_pred)
 
-# MODEL EVALUATION
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))
-
+print(rf_acc_raw)
+print(rf_acc_mat)
+print(rf_class_rep)
 
 # print("--------------------------------------------------")
 # print("                Cleaning API Tweets               ")
@@ -110,7 +99,8 @@ print("Feature Importance")
 print("-------------------")
 
 for x in range(X.shape[1]):
-    print("%d. feature %d (%f)" % (x + 1, indices[x], f_imp[indices[x]]))
+    temp = indices[x]
+    print("%d." % (x + 1) + fImpGraph[temp] + "(%f)" % (f_imp[temp]))
 
 # plot feature importance on graph
 plt.figure()

@@ -5,6 +5,10 @@ from sklearn import metrics
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report, confusion_matrix
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import RobustScaler
 
 df = pd.read_csv("trainingSet.csv")
 df = df.fillna(0)
@@ -16,22 +20,50 @@ y = df['bot']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=0)
 
+# print("---------------------------------------------")
+# print(X_train)
+
 # reduces computational effort by limiting the boundary space
-scaling = MinMaxScaler(feature_range=(-1,1)).fit(X_train)
-X_train = scaling.transform(X_train)
-X_test = scaling.transform(X_test)
+
+# using MinMaxScaler() to limit the boundary space
+# scaling = MinMaxScaler(feature_range=(-1, 1)).fit(X_train)
+# X_train = scaling.transform(X_train)
+# X_test = scaling.transform(X_test)
+
+# using StandardScaler() to limit boundary space
+# scaled = StandardScaler()
+# X_train = scaled.fit_transform(X_train)
+# X_test = scaled.fit_transform(X_test)
+
+# using RobustScaler() to limit boundary space
+scaled = RobustScaler()
+X_train = scaled.fit_transform(X_train)
+X_test = scaled.fit_transform(X_test)
+
+# print("##############################################")
+# print(X_train)
+# print("---------------------------------------------")
 
 # using preprocessing to normalize the data
-X_train = preprocessing.scale(X_train)
-X_test = preprocessing.scale(X_test)
+# X_train = preprocessing.scale(X_train)
+# X_test = preprocessing.scale(X_test)
 
-clf = svm.SVC(kernel = 'linear', random_state=0)
+# generate SVM model
+# clf = svm.SVC(kernel = 'linear', random_state=0)
+clf = svm.SVC(kernel = 'linear', cache_size = 2000)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
-print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+svm_acc_raw = metrics.accuracy_score(y_test, y_pred)
+svm_acc_mat = confusion_matrix(y_test, y_pred)
 
+print(svm_acc_raw)
+print(svm_acc_mat)
+
+print("Missing Values: ")
+print((df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
+        'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
+        'protected', 'verified', 'notifications', 'contributors_enabled']] == 0).sum())
 
 df2 = pd.read_csv("dataset.csv")
 
@@ -53,22 +85,22 @@ for i, j in df2.iterrows():
 
 print("Bot Count: " + str(botCount))
 
-# for i, j in df2.iterrows():
-#    if j.screen_name == "b'90210Deplorable'":
-#        x0 = j.screen_name
-#        x1 = j.statuses_count
-#        x2 = j.followers_count
-#        x3 = j.friends_count
-#        x4 = j.favourites_count
-#        x5 = j.listed_count
-#        x6 = j.default_profile
-#        x7 = j.default_profile_image
-#        x8 = j.geo_enabled
-#        x9 = j.profile_background_tile
-#        x10 = j.protected
-#        x11 = j.verified
-#        x12 = j.notifications
-#        x13 = j.contributors_enabled
+# Plot of Dependent Variables
+plt.figure(figsize = (14,5))
+plt.subplot(1,2,1)
+plt.scatter(df['statuses_count'], df['bot'])
+plt.ylabel('Bot')
+plt.xlabel('Friends Number')
+plt.show()
 
-#print(x0)
-#print(clf.predict([[x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13]]))
+
+# Distribution of Dependent Variables
+plt.subplot(1,2,1)
+plt.hist(df['geo_enabled'][df['bot'] == 0], bins=3, alpha = 0.7, label = 'bot = 0')
+plt.hist(df['geo_enabled'][df['bot'] == 1], bins=3, alpha = 0.7, label = 'bot = 1')
+plt.ylabel('Distribution')
+plt.xlabel('Geo Enabled')
+plt.xticks(range(0,2), ('No', 'Yes'))
+plt.legend()
+plt.show()
+

@@ -10,6 +10,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn import svm
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
+import re
+
+from metrics import metric_display
 
 ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
 ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
@@ -83,36 +86,9 @@ def RFPred():
     df = pd.read_csv("trainingSet.csv")
     df = df.fillna(0)
 
-    df.head()
-
-    # statuses_count
-    # followers_count
-    # friends_count
-    # favourites_count
-    # listed_count
-    # default_profile
-    # default_profile_image
-    # geo_enabled
-    # profile_background_tile
-    # protected
-    # verified
-    # notifications
-    # contributors_enabled
-
-    # name
-    # screen_name
-    # time_zone (108 unique)
-    # location (2109 unique)
-    # profile_text_color (405 unique)
-    # profile_background_color (531 unique)
-    # profile_link_color (895 unique)
-    # description
-    # following
-    # created_at
-
-    print("--------------------------------------")
-    print(df['following'].describe())
-    print("--------------------------------------")
+    fImpGraph = ['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
+                 'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
+                 'protected', 'verified', 'notifications', 'contributors_enabled']
 
     X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
             'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
@@ -127,21 +103,12 @@ def RFPred():
 
     y_pred = clf.predict(X_test)
 
-    # print("--------------------------------------------------")
-    # print("                Cleaning API Tweets               ")
-    # print("--------------------------------------------------")
+    clf_acc_raw = metrics.accuracy_score(y_test, y_pred)
+    clf_acc_mat = confusion_matrix(y_test, y_pred)
+    clf_class_rep = classification_report(y_test, y_pred)
 
     df2 = pd.read_csv("dataset.csv")
 
-    # Convert TRUE FALSE to 1 0
-    # df2['default_profile'] = df2['default_profile'].astype(int)
-    # df2['default_profile_image'] = df2['default_profile_image'].astype(int)
-    # df2['geo_enabled'] = df2['geo_enabled'].astype(int)
-    # df2['profile_background_tile'] = df2['profile_background_tile'].astype(int)
-    # df2['protected'] = df2['protected'].astype(int)
-    # df2['verified'] = df2['verified'].astype(int)
-    # df2['notifications'] = df2['notifications'].astype(int)
-    # df2['contributors_enabled'] = df2['contributors_enabled'].astype(int)
 
     rfOption = 1
     while rfOption != 4:
@@ -159,26 +126,36 @@ def RFPred():
             print("                Predicting Bots                   ")
             print("--------------------------------------------------")
 
-            botCount = 0
-            for i, j in df2.iterrows():
-                isBot = clf.predict([[j.statuses_count, j.followers_count, j.friends_count, j.favourites_count,
-                                      j.listed_count, j.default_profile, j.default_profile_image, j.geo_enabled,
-                                      j.profile_background_tile, j.protected, j.verified, j.notifications,
-                                      j.contributors_enabled]])
+            bot_count = 0
+            bot_list = []
+            name_list = []
+            for i, iter_pred in df2.iterrows():
+                is_bot = clf.predict([[iter_pred.statuses_count,
+                                       iter_pred.followers_count,
+                                       iter_pred.friends_count,
+                                       iter_pred.favourites_count,
+                                       iter_pred.listed_count,
+                                       iter_pred.default_profile,
+                                       iter_pred.default_profile_image,
+                                       iter_pred.geo_enabled,
+                                       iter_pred.profile_background_tile,
+                                       iter_pred.protected,
+                                       iter_pred.verified,
+                                       iter_pred.notifications,
+                                       iter_pred.contributors_enabled]])
 
-                if isBot == 1:
-                    # Save Bot Results for Printing
-                    botCount += 1
-                    print(j['screen_name'])
+                if is_bot == 1:
+                    bot_count += 1
+                    bot_list.append(iter_pred)
+                    name_format = (re.sub("'", "", iter_pred['screen_name']))
+                    name_list.append(name_format[1:])
 
-            print("Bot Count: " + str(botCount))
+            print("\n".join(name_list))
+            print("Bot Count: " + str(bot_count))
 
         elif rfOption == '2':
-            print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
 
-            # MODEL EVALUATION
-            print(confusion_matrix(y_test, y_pred))
-            print(classification_report(y_test, y_pred))
+                metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
 
         elif rfOption == '3':
             # feature importance visualization
@@ -195,7 +172,8 @@ def RFPred():
             print("-------------------")
 
             for x in range(X.shape[1]):
-                print("%d. feature %d (%f)" % (x + 1, indices[x], f_imp[indices[x]]))
+                temp = indices[x]
+                print("%d." % (x + 1) + fImpGraph[temp] + "(%f)" % (f_imp[temp]))
 
             # plot feature importance on graph
             plt.figure()
@@ -208,9 +186,10 @@ def RFPred():
         elif rfOption == '4':
             # return to main menu
             main()
+        else:
+            print("Invalid Input, Please Select and Option")
 
 def SVMPred():
-    print("Predicting with SVM")
 
     df = pd.read_csv("trainingSet.csv")
     df = df.fillna(0)
@@ -235,32 +214,67 @@ def SVMPred():
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
 
-    print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
-    print(confusion_matrix(y_test, y_pred))
+    rfOption = 1
+    while rfOption != 4:
+        print("---------------")
+        print("Options: ")
+        print("1. Show Predicted Bots")
+        print("2. Accuracy Metrics")
+        print("3. Distribution Graphs")
+        print("4. Return to Main Menu")
+        print("---------------")
 
+        rfOption = input()
+        if rfOption == '1':
 
-    df2 = pd.read_csv("dataset.csv")
+            df2 = pd.read_csv("dataset.csv")
 
-    print("--------------------------------------------------")
-    print("                Predicting Bots                   ")
-    print("--------------------------------------------------")
+            print("--------------------------------------------------")
+            print("                Predicting Bots                   ")
+            print("--------------------------------------------------")
 
-    botCount = 0
-    for i, j in df2.iterrows():
-        isBot = clf.predict([[j.statuses_count, j.followers_count, j.friends_count, j.favourites_count,
-                            j.listed_count, j.default_profile, j.default_profile_image, j.geo_enabled,
-                            j.profile_background_tile, j.protected, j.verified, j.notifications,
-                            j.contributors_enabled]])
+            botCount = 0
+            for i, j in df2.iterrows():
+                isBot = clf.predict([[j.statuses_count, j.followers_count, j.friends_count, j.favourites_count,
+                                      j.listed_count, j.default_profile, j.default_profile_image, j.geo_enabled,
+                                      j.profile_background_tile, j.protected, j.verified, j.notifications,
+                                      j.contributors_enabled]])
 
-        if isBot == 1:
-            # Save Bot Results for Printing
-            print(j.screen_name)
-            botCount += 1
+                if isBot == 1:
+                    # Save Bot Results for Printing
+                    print(j.screen_name)
+                    botCount += 1
 
-    print("Bot Count: " + str(botCount))
+            print("Bot Count: " + str(botCount))
 
-    # return to main menu
-    main()
+        if rfOption == '2':
+
+            print("Accuracy: ", metrics.accuracy_score(y_test, y_pred))
+            print(confusion_matrix(y_test, y_pred))
+
+        if rfOption == '3':
+
+            # Plot of Dependent Variables
+            plt.figure(figsize=(14, 5))
+            plt.subplot(1, 2, 1)
+            plt.scatter(df['statuses_count'], df['bot'])
+            plt.ylabel('Bot')
+            plt.xlabel('Friends Number')
+            plt.show()
+
+            # Distribution of Dependent Variables
+            plt.subplot(1, 2, 1)
+            plt.hist(df['geo_enabled'][df['bot'] == 0], bins=3, alpha=0.7, label='bot = 0')
+            plt.hist(df['geo_enabled'][df['bot'] == 1], bins=3, alpha=0.7, label='bot = 1')
+            plt.ylabel('Distribution')
+            plt.xlabel('Geo Enabled')
+            plt.xticks(range(0, 2), ('No', 'Yes'))
+            plt.legend()
+            plt.show()
+
+        if rfOption == '4':
+             # return to main menu
+            main()
 
 def main():
 
