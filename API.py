@@ -1,8 +1,13 @@
 import csv
 import tweepy
 
-def search(c_key, c_key_secret, acc_token, acc_token_secret, set_hashtag):
 
+def search(c_key, c_key_secret, acc_token, acc_token_secret):
+
+    print("Enter Hashtag Below: ")
+    set_hashtag = input()
+
+    print("Connecting to Twitter API")
     # initialize oAuth verification using consumer-key & access-token
     auth_init = tweepy.OAuthHandler(c_key, c_key_secret)
     auth_init.set_access_token(acc_token, acc_token_secret)
@@ -21,6 +26,8 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret, set_hashtag):
                               'profile_text_color', 'profile_background_tile', 'profile_background_color',
                               'profile_link_color', 'protected', 'verified', 'notifications',
                               'description', 'contributors_enabled', 'following', 'created_at'])
+
+        print("Fetching Tweets from " + set_hashtag)
 
         for tweet in tweepy.Cursor(t_api.search, q=set_hashtag, lang="en", tweet_mode='extended').items(1000):
 
@@ -53,11 +60,6 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret, set_hashtag):
                         tweet.user.following,
                         tweet.user.created_at
                         ])
+    return
 
 
-ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
-ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
-at = '1077691432360726529-6ohW6KvrlS3qlXUYvhXzqcUUmM38u0'
-at_secret = '42P1J5wVfO18v5yg23uGn2XS19WzNNARw1uMft1v25q1k'
-hashtag = '#cheese'
-search(ck, ck_secret, at, at_secret, hashtag)

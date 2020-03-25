@@ -109,3 +109,4 @@ plt.bar(range(X.shape[1]), f_imp[indices], color="g", align="center")
 plt.xticks(range(X.shape[1]), indices)
 #plt.xlim([-1, X.shape[1]])
 plt.show()
+

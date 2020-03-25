@@ -27,4 +27,4 @@ def metric_display(raw, mat, rep):
         else:
             print("Invalid Selection")
 
-
+    return
