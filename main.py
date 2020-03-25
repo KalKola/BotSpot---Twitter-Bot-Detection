@@ -14,6 +14,7 @@ from metrics import metric_display
 from pred import bot_prediction
 from API import search
 from random_forest import rf_pred
+from svm import svm_pred
 
 ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
 ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
@@ -104,12 +105,14 @@ def main():
 
     selection = input()
 
+    # Twitter API call
     if selection == '1':
         search(ck, ck_secret, at, at_secret)
         print("Twitter API Fetch Complete")
 
+    # Random Forest Model
     elif selection == '2':
-        # RFPred()
+
         clf, clf_acc_raw, clf_acc_mat, clf_class_rep = rf_pred()
 
         rf_option = '1'
@@ -123,28 +126,69 @@ def main():
             print("---------------")
 
             rf_option = input()
+
+            # Show Predicted Bots
             if rf_option == '1':
 
                 bot_prediction(clf)
 
+            # Show Evaluation Metrics
             elif rf_option == '2':
 
                 metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
 
+            # Generate Feature Importance Graphs
             elif rf_option == '3':
                 # feature importance visualization
                 print("hello")
 
+            # Return to Main Menu
             elif rf_option == '4':
+
+                main()
+
+            # Invalid Option Selected
+            else:
+                print("Invalid Input, Please Select and Option")
+
+    # Support Vector Machine Model
+    elif selection == '3':
+        clf, clf_acc_raw, clf_acc_mat, clf_class_rep = svm_pred()
+
+        svm_option = '1'
+        while svm_option != 4:
+            print("---------------")
+            print("Options: ")
+            print("1. Show Predicted Bots")
+            print("2. Accuracy Metrics")
+            print("3. Feature Importance Graph")
+            print("4. Return to Main Menu")
+            print("---------------")
+
+            svm_option = input()
+            if svm_option == '1':
+
+                bot_prediction(clf)
+
+            elif svm_option == '2':
+
+                metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
+
+            elif svm_option == '3':
+                # feature importance visualization
+                print("hello")
+
+            elif svm_option == '4':
                 # return to main menu
                 main()
             else:
                 print("Invalid Input, Please Select and Option")
 
-    elif selection == '3':
-        SVMPred()
+    # Exit Program
     elif selection == '4':
         exit()
+
+    # Invalid Option Selected
     else:
         print("Invalid Input")
 

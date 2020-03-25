@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e94ac799-24f6-421e-a438-886d0b948d7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/randomForestNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/randomForestNew.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random_forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_forest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +310,7 @@
       <workItem from="1584985219831" duration="1165000" />
       <workItem from="1585048618351" duration="25000" />
       <workItem from="1585132725922" duration="4223000" />
-      <workItem from="1585137571625" duration="176000" />
+      <workItem from="1585137571625" duration="1644000" />
     </task>
     <servers />
   </component>
@@ -337,22 +335,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="304" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1536.824@0.0.1536.824" timestamp="1583270022908" />
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1585137562485">
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1585138808582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585137562485" />
-    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1585137562485">
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585138808582" />
+    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1585138808582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585137562485" />
-    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1585137562485">
+    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585138808582" />
+    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1585138808582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585137562485" />
-    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1585137562485">
+    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585138808582" />
+    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1585138808582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585137562485" />
+    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585138808582" />
     <state x="277" y="54" key="SettingsEditor" timestamp="1584733792900">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -386,7 +384,7 @@
     <SUITE FILE_PATH="coverage/BotDetection$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1575301771088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2" />
     <SUITE FILE_PATH="coverage/BotDetection$clustering.coverage" NAME="clustering Coverage Results" MODIFIED="1583153749800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$miller.coverage" NAME="miller Coverage Results" MODIFIED="1573564869222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
-    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1585137663947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1585138808574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1584969695585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$AES.coverage" NAME="AES Coverage Results" MODIFIED="1573557632697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
   </component>
