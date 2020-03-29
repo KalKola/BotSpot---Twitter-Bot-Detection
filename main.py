@@ -15,6 +15,7 @@ from pred import bot_prediction
 from API import search
 from random_forest import rf_pred
 from svm import svm_pred
+from graphs import graph_display
 
 ck = 'sRTmVkVycTYfV5G9ou34BIN5B'
 ck_secret = 'KP0xxglcfkbloEA1JHBRGdjNB1m7sysqhKtMeQMjCHQBkSWqdX'
@@ -53,13 +54,13 @@ def SVMPred():
 
     rfOption = 1
     while rfOption != 4:
-        print("---------------")
+        print("----------------------------------")
         print("Options: ")
         print("1. Show Predicted Bots")
         print("2. Accuracy Metrics")
         print("3. Distribution Graphs")
         print("4. Return to Main Menu")
-        print("---------------")
+        print("----------------------------------")
 
         rfOption = input()
         if rfOption == '1':
@@ -72,7 +73,7 @@ def SVMPred():
 
         if rfOption == '3':
 
-            # Plot of Dependent Variables
+            # Plot of Independent Variables
             plt.figure(figsize=(14, 5))
             plt.subplot(1, 2, 1)
             plt.scatter(df['statuses_count'], df['bot'])
@@ -80,7 +81,7 @@ def SVMPred():
             plt.xlabel('Friends Number')
             plt.show()
 
-            # Distribution of Dependent Variables
+            # Distribution of Independent Variables
             plt.subplot(1, 2, 1)
             plt.hist(df['geo_enabled'][df['bot'] == 0], bins=3, alpha=0.7, label='bot = 0')
             plt.hist(df['geo_enabled'][df['bot'] == 1], bins=3, alpha=0.7, label='bot = 1')
@@ -90,107 +91,111 @@ def SVMPred():
             plt.legend()
             plt.show()
 
+
+
         if rfOption == '4':
              # return to main menu
             main()
 
 def main():
 
-    print("----------------------------")
-    print("1. Fetch Tweet Data")
-    print("2. RF-based Prediction")
-    print("3. SVM-based Prediction")
-    print("4. Exit")
-    print("----------------------------")
+    selection = 1
+    while selection != 4:
+        print("----------------------------")
+        print("1. Fetch Tweet Data")
+        print("2. RF-based Prediction")
+        print("3. SVM-based Prediction")
+        print("4. Exit")
+        print("----------------------------")
 
-    selection = input()
+        selection = input()
 
-    # Twitter API call
-    if selection == '1':
-        search(ck, ck_secret, at, at_secret)
-        print("Twitter API Fetch Complete")
+        # Twitter API call
+        if selection == '1':
+            search(ck, ck_secret, at, at_secret)
+            print("Twitter API Fetch Complete")
 
-    # Random Forest Model
-    elif selection == '2':
+        # Random Forest Model
+        elif selection == '2':
 
-        clf, clf_acc_raw, clf_acc_mat, clf_class_rep = rf_pred()
+            clf, clf_acc_raw, clf_acc_mat, clf_class_rep = rf_pred()
 
-        rf_option = '1'
-        while rf_option != 4:
-            print("---------------")
-            print("Options: ")
-            print("1. Show Predicted Bots")
-            print("2. Accuracy Metrics")
-            print("3. Feature Importance Graph")
-            print("4. Return to Main Menu")
-            print("---------------")
+            rf_option = '1'
+            while rf_option != 4:
+                print("----------------------------------")
+                print("Options: ")
+                print("1. Show Predicted Bots")
+                print("2. Accuracy Metrics")
+                print("3. Feature Importance Graph")
+                print("4. Return to Main Menu")
+                print("----------------------------------")
 
-            rf_option = input()
+                rf_option = input()
 
-            # Show Predicted Bots
-            if rf_option == '1':
+                # Show Predicted Bots
+                if rf_option == '1':
 
-                bot_prediction(clf)
+                    bot_prediction(clf)
 
-            # Show Evaluation Metrics
-            elif rf_option == '2':
+                # Show Evaluation Metrics
+                elif rf_option == '2':
 
-                metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
+                    metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
 
-            # Generate Feature Importance Graphs
-            elif rf_option == '3':
-                # feature importance visualization
-                print("hello")
+                # Generate Feature Importance Graphs
+                elif rf_option == '3':
+                    # feature importance visualization
+                    graph_display(clf, 1)
 
-            # Return to Main Menu
-            elif rf_option == '4':
+                # Return to Main Menu
+                elif rf_option == '4':
 
-                main()
+                    main()
 
-            # Invalid Option Selected
-            else:
-                print("Invalid Input, Please Select and Option")
+                # Invalid Option Selected
+                else:
+                    print("Invalid Input, Please Select and Option")
 
-    # Support Vector Machine Model
-    elif selection == '3':
-        clf, clf_acc_raw, clf_acc_mat, clf_class_rep = svm_pred()
+        # Support Vector Machine Model
+        elif selection == '3':
+            clf, clf_acc_raw, clf_acc_mat, clf_class_rep = svm_pred()
 
-        svm_option = '1'
-        while svm_option != 4:
-            print("---------------")
-            print("Options: ")
-            print("1. Show Predicted Bots")
-            print("2. Accuracy Metrics")
-            print("3. Feature Importance Graph")
-            print("4. Return to Main Menu")
-            print("---------------")
+            svm_option = '1'
+            while svm_option != 4:
+                print("----------------------------------")
+                print("Options: ")
+                print("1. Show Predicted Bots")
+                print("2. Accuracy Metrics")
+                print("3. Feature Distribution Graphs")
+                print("4. Return to Main Menu")
+                print("----------------------------------")
 
-            svm_option = input()
-            if svm_option == '1':
+                svm_option = input()
+                if svm_option == '1':
 
-                bot_prediction(clf)
+                    bot_prediction(clf)
 
-            elif svm_option == '2':
+                elif svm_option == '2':
 
-                metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
+                    metric_display(clf_acc_raw, clf_acc_mat, clf_class_rep)
 
-            elif svm_option == '3':
-                # feature importance visualization
-                print("hello")
+                elif svm_option == '3':
+                    # Distribution Plot Display
+                    graph_display(clf, 2)
 
-            elif svm_option == '4':
-                # return to main menu
-                main()
-            else:
-                print("Invalid Input, Please Select and Option")
+                elif svm_option == '4':
+                    # return to main menu
+                    main()
+                else:
+                    print("Invalid Input, Please Select and Option")
 
-    # Exit Program
-    elif selection == '4':
-        exit()
+        # Exit Program
+        elif selection == '4':
+            exit()
 
-    # Invalid Option Selected
-    else:
-        print("Invalid Input")
+        # Invalid Option Selected
+        else:
+            print("Invalid Input")
 
 
 main()

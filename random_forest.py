@@ -36,6 +36,7 @@ def rf_pred():
     rf_acc_mat = confusion_matrix(y_test, y_pred)
     rf_class_rep = classification_report(y_test, y_pred)
 
-    print("-- Model Complete -")
+    print("-- Model Complete --")
+
 
     return clf, rf_acc_raw, rf_acc_mat, rf_class_rep

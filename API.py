@@ -1,11 +1,20 @@
 import csv
 import tweepy
+import re
 
 
 def search(c_key, c_key_secret, acc_token, acc_token_secret):
 
+    # read in user hashtag and validate using regular-expression
     print("Enter Hashtag Below: ")
-    set_hashtag = input()
+    re_check = 0
+    while re_check == 0:
+        set_hashtag = input()
+        if re.match('^[a-zA-Z0-9_]*$', set_hashtag) and len(set_hashtag) < 140:
+            print("-- Hashtag Accepted -- ")
+            re_check = 1
+        else:
+            print("-- Invalid Hashtag, Try Again --")
 
     print("Connecting to Twitter API")
     # initialize oAuth verification using consumer-key & access-token

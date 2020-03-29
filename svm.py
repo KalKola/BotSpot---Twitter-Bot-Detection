@@ -51,11 +51,6 @@ def svm_pred():
     svm_acc_mat = confusion_matrix(y_test, y_pred)
     svm_class_rep = classification_report(y_test, y_pred)
 
-    print("Missing Values: ")
-    print((df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
-               'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
-               'protected', 'verified', 'notifications', 'contributors_enabled']] == 0).sum())
-
     print("-- Model Complete --")
 
     return clf, svm_acc_raw, svm_acc_mat, svm_class_rep
