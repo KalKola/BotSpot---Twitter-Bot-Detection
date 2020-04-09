@@ -38,6 +38,7 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret):
 
         print("Fetching Tweets from " + set_hashtag)
 
+        # fetch Tweet dataset and extract necessary metadata
         for tweet in tweepy.Cursor(t_api.search, q=set_hashtag, lang="en", tweet_mode='extended').items(1000):
 
             file_writer.writerow([

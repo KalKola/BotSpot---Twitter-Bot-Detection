@@ -72,6 +72,8 @@ def data_cleaning():
         df['contributors_enabled'].fillna(0, inplace=True)
         df['following'].fillna(0, inplace=True)
 
+
+
         print("-------------------------------------")
         print(df.isnull().sum())
 

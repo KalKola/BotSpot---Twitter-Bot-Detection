@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/randomForestNew.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/random_forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_forest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
@@ -53,29 +55,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2/main.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="get_api_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="BotDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_api_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.logistic_regression (1)">
     <configuration name="graphs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BotDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,6 +70,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graphs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="logistic_regression (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BotDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logistic_regression.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="logistic_regression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BotDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Kal\Downloads\BotDetection\logistic_regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,35 +166,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="BotDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.logistic_regression (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.graphs" />
-        <item itemvalue="Python.get_api_test" />
-        <item itemvalue="Python.testing" />
+        <item itemvalue="Python.logistic_regression" />
         <item itemvalue="Python.random_forest" />
+        <item itemvalue="Python.graphs" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +321,20 @@
       <workItem from="1585216250135" duration="7675000" />
       <workItem from="1585303696002" duration="18806000" />
       <workItem from="1585408420546" duration="7037000" />
-      <workItem from="1585476578741" duration="504000" />
+      <workItem from="1585476578741" duration="1987000" />
+      <workItem from="1585481854114" duration="6784000" />
+      <workItem from="1585509647011" duration="203000" />
+      <workItem from="1585563728912" duration="46000" />
+      <workItem from="1585564565682" duration="3603000" />
+      <workItem from="1585645719196" duration="2729000" />
+      <workItem from="1585650535888" duration="3550000" />
+      <workItem from="1585821355314" duration="2243000" />
+      <workItem from="1585998832558" duration="604000" />
+      <workItem from="1586086280225" duration="616000" />
+      <workItem from="1586090813938" duration="426000" />
+      <workItem from="1586251684701" duration="4595000" />
+      <workItem from="1586269887015" duration="22000" />
+      <workItem from="1586432011225" duration="11461000" />
     </task>
     <servers />
   </component>
@@ -344,22 +359,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="304" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1536.824@0.0.1536.824" timestamp="1583270022908" />
-    <state width="745" height="252" key="GridCell.Tab.0.bottom" timestamp="1585477008922">
+    <state width="1134" height="230" key="GridCell.Tab.0.bottom" timestamp="1586456435422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585477008922" />
-    <state width="745" height="252" key="GridCell.Tab.0.center" timestamp="1585477008922">
+    <state width="1134" height="230" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586456435422" />
+    <state width="1134" height="230" key="GridCell.Tab.0.center" timestamp="1586456435422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="252" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585477008922" />
-    <state width="745" height="252" key="GridCell.Tab.0.left" timestamp="1585477008922">
+    <state width="1134" height="230" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586456435422" />
+    <state width="1134" height="230" key="GridCell.Tab.0.left" timestamp="1586456435422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="252" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585477008922" />
-    <state width="745" height="252" key="GridCell.Tab.0.right" timestamp="1585477008922">
+    <state width="1134" height="230" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586456435422" />
+    <state width="1134" height="230" key="GridCell.Tab.0.right" timestamp="1586456435422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="252" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585477008922" />
+    <state width="1134" height="230" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586456435422" />
     <state width="781" height="261" key="GridCell.Tab.1.bottom" timestamp="1585407339571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -376,14 +391,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="781" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585407339570" />
-    <state x="277" y="54" key="SettingsEditor" timestamp="1585319559283">
+    <state x="277" y="54" key="SettingsEditor" timestamp="1586433594286">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585319559283" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1585476627503">
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586433594286" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586432742105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585476627503" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586432742105" />
     <state x="195" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585317765050">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -401,17 +416,19 @@
     <SUITE FILE_PATH="coverage/BotDetection$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1575302736679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 4/RSA" />
     <SUITE FILE_PATH="coverage/BotDetection$linearRegression.coverage" NAME="linearRegression Coverage Results" MODIFIED="1581264135715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$SVM.coverage" NAME="SVM Coverage Results" MODIFIED="1584802015967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$k_means.coverage" NAME="k_means Coverage Results" MODIFIED="1586255639108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$get_api_test.coverage" NAME="get_api_test Coverage Results" MODIFIED="1585306056652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$logistic_regression__1_.coverage" NAME="logistic_regression (1) Coverage Results" MODIFIED="1586456435412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$randomForest.coverage" NAME="randomForest Coverage Results" MODIFIED="1572877802839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$testing.coverage" NAME="testing Coverage Results" MODIFIED="1585223424341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$randomForestNew.coverage" NAME="randomForestNew Coverage Results" MODIFIED="1584883213665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BotDetection$random_forest.coverage" NAME="random_forest Coverage Results" MODIFIED="1585142014722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$random_forest.coverage" NAME="random_forest Coverage Results" MODIFIED="1585509699148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$API.coverage" NAME="API Coverage Results" MODIFIED="1584981827592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1575301771088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Machine Learning/Assignment 2" />
     <SUITE FILE_PATH="coverage/BotDetection$clustering.coverage" NAME="clustering Coverage Results" MODIFIED="1583153749800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$miller.coverage" NAME="miller Coverage Results" MODIFIED="1573564869222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
     <SUITE FILE_PATH="coverage/BotDetection$graphs.coverage" NAME="graphs Coverage Results" MODIFIED="1585414320637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1585477008910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1586435862261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1584969695585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotDetection$AES.coverage" NAME="AES Coverage Results" MODIFIED="1573557632697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Work/Advanced Security/Lab 3" />
   </component>

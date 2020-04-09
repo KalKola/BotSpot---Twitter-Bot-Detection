@@ -3,6 +3,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import roc_curve
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
 
 
 def rf_pred():
@@ -38,5 +41,31 @@ def rf_pred():
 
     print("-- Model Complete --")
 
+    roc_prod = 1
+    print("Produce ROC-AUC Curve? (Testing Purpose)")
+    print(" 1. Yes")
+    print(" 2. No")
+
+    roc_prod = input()
+    if roc_prod == '1':
+
+        # calculate AUC, FPR, TRP, & Threshhold levels
+        svm_prob = clf.predict_proba(X_test)
+        svm_prob = svm_prob[:, 1]
+        svm_auc = roc_auc_score(y_test, svm_prob)
+        print("AUC Value: " + str(svm_auc))
+        fpr, tpr, thresh = roc_curve(y_test, svm_prob)
+
+        # create AUC-ROC Curve for SVM model
+        plt.style.use('ggplot')
+        plt.plot([0,1], [0,1], linestyle='--', color='darkblue', label='Baseline')
+        plt.plot(fpr, tpr, color="darkorange", label='ROC')
+        plt.xlabel('False Positive Rate')
+        plt.ylabel('True Positive Rate')
+        plt.title('AUC-ROC RF Curve')
+        plt.legend()
+        plt.show()
+    else:
+        print("returning to menu")
 
     return clf, rf_acc_raw, rf_acc_mat, rf_class_rep
