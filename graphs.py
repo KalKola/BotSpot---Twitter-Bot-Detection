@@ -8,15 +8,18 @@ from graphviz import Source
 
 def graph_display(clf, deter):
 
-    df = pd.read_csv("t_set.csv")
+    # read in training set for graph headings
+    df = pd.read_csv("datasets/t_set.csv")
     df = df.fillna(0)
 
     X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
             'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
-            'protected', 'verified', 'notifications', 'contributors_enabled']]
+            'protected', 'verified']]
     y = df[['bot']]
 
+    # RF graph option
     if deter == 1:
+
         # calculate RF feature importance
         f_imp = clf.feature_importances_
 
@@ -43,7 +46,26 @@ def graph_display(clf, deter):
         plt.xticks(x_values, feature_list, rotation=25)
         plt.ylabel('Importance'); plt.xlabel('Features'); plt.title('Feature Importance')
 
+        figure = plt.gcf()
         plt.show()
+
+        # prompt user to save figure
+        save_fig = 1
+        fig_name = 0
+        print("Save to local machine?")
+        print(" 1. Yes")
+        print(" 2. No")
+
+        save_fig = input()
+        if save_fig == '1':
+            print("Enter File Name:")
+            fig_name = input()
+
+            print("Saving figure to local machine...")
+            figure.savefig("graphs/" + fig_name + '.png', dpi=100)
+            print("Save complete")
+        else:
+            print("Figure not saved")
 
         # Decision Tree Visualization
         rf_estimator = clf.estimators_[5]
@@ -65,12 +87,15 @@ def graph_display(clf, deter):
 
         return
 
+    # SVM, LR graph option
     elif deter == 2:
 
+        # initialize graph_list for menu option selection
         graph_list = ['geo_enabled', 'default_profile', 'default_profile_image',
                       'favourites_count', 'statuses_count', 'followers_count',
                       'friends_count', 'listed_count']
 
+        # create loop for plot generation
         graph_opt = 1
         while graph_opt != 9:
             print("----------------------------")
@@ -87,6 +112,7 @@ def graph_display(clf, deter):
 
             graph_opt = input()
 
+            # distribution plot options
             if graph_opt in ('1', '2', '3'):
 
                 # Distribution of Independent Variables
@@ -97,8 +123,28 @@ def graph_display(clf, deter):
                 plt.xlabel(graph_list[int(graph_opt) - 1])
                 plt.xticks(range(0, 2), ('No', 'Yes'))
                 plt.legend()
+
+                figure = plt.gcf()
                 plt.show()
 
+                save_fig = 1
+                fig_name = 0
+                print("Save to local machine?")
+                print(" 1. Yes")
+                print(" 2. No")
+
+                save_fig = input()
+                if save_fig == '1':
+                    print("Enter File Name:")
+                    fig_name = input()
+
+                    print("Saving figure to local machine...")
+                    figure.savefig("graphs/" + fig_name + '.png', dpi=100)
+                    print("Save complete")
+                else:
+                    print("Figure not saved")
+
+            # scatter plot options
             elif graph_opt in ('4', '5', '6', '7', '8'):
 
                 # Plot of Independent Variables
@@ -107,13 +153,33 @@ def graph_display(clf, deter):
                 plt.scatter(df[graph_list[int(graph_opt) - 1]], df['bot'])
                 plt.ylabel('Bot')
                 plt.xlabel(graph_list[int(graph_opt) - 1])
+
+                figure = plt.gcf()
                 plt.show()
 
+                save_fig = 1
+                fig_name = 0
+                print("Save to local machine?")
+                print(" 1. Yes")
+                print(" 2. No")
 
+                save_fig = input()
+                if save_fig == '1':
+                    print("Enter File Name:")
+                    fig_name = input()
+
+                    print("Saving figure to local machine...")
+                    figure.savefig("graphs/" + fig_name + '.png', dpi=100)
+                    print("Save complete")
+                else:
+                    print("Figure not saved")
+
+            # return to model submenu
             elif graph_opt == '9':
 
                 return
 
+            # invalid option selected, return to graph submenu
             else:
 
                 print("Invalid Option, Please Select a Feature to Graph")

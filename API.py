@@ -9,7 +9,10 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret):
     print("Enter Hashtag Below: ")
     re_check = 0
     while re_check == 0:
+
         set_hashtag = input()
+
+        # check that Tweet is less than 140 characters, and contains only alphanumerical + _
         if re.match('^[a-zA-Z0-9_]*$', set_hashtag) and len(set_hashtag) < 140:
             print("-- Hashtag Accepted -- ")
             re_check = 1
@@ -17,15 +20,17 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret):
             print("-- Invalid Hashtag, Try Again --")
 
     print("Connecting to Twitter API")
+
     # initialize oAuth verification using consumer-key & access-token
     auth_init = tweepy.OAuthHandler(c_key, c_key_secret)
     auth_init.set_access_token(acc_token, acc_token_secret)
+
     # establish connection to Twitter API - set auto-wait on call-limit
     t_api = tweepy.API(auth_init, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
     # create the csv file to write the data to
     fname = 'dataset'
-    with open('%s.csv' % fname, 'w') as file:
+    with open('datasets/%s.csv' % fname, 'w') as file:
 
         file_writer = csv.writer(file)
 
@@ -39,7 +44,7 @@ def search(c_key, c_key_secret, acc_token, acc_token_secret):
         print("Fetching Tweets from " + set_hashtag)
 
         # fetch Tweet dataset and extract necessary metadata
-        for tweet in tweepy.Cursor(t_api.search, q=set_hashtag, lang="en", tweet_mode='extended').items(1000):
+        for tweet in tweepy.Cursor(t_api.search, q=set_hashtag, tweet_mode='extended').items(1000):
 
             file_writer.writerow([
                         tweet.user.name.encode('utf-8'),

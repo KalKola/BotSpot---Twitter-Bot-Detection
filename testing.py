@@ -8,8 +8,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
+
 def rf_test():
-        df = pd.read_csv("t_set.csv")
+        df = pd.read_csv("datasets/t_set.csv")
         df = df.fillna(0)
 
         df.head()
@@ -19,9 +20,7 @@ def rf_test():
                 'protected', 'verified', 'notifications', 'contributors_enabled']]
         y = df['bot']
 
-
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=10)
-
 
         # parameter sample value set
         test_set = {
@@ -56,9 +55,9 @@ def data_cleaning():
         pd.set_option('display.width', 520)
         pd.set_option('display.max_columns', 20)
 
-        # print(df.describe())
+        print(df.describe())
         print(df.isnull().sum())
-        # print(df.dtypes)
+        print(df.dtypes)
 
         df = df.drop("notifications", axis=1)
 
@@ -71,8 +70,6 @@ def data_cleaning():
         df['verified'].fillna(0, inplace=True)
         df['contributors_enabled'].fillna(0, inplace=True)
         df['following'].fillna(0, inplace=True)
-
-
 
         print("-------------------------------------")
         print(df.isnull().sum())

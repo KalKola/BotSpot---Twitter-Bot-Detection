@@ -10,15 +10,18 @@ import matplotlib.pyplot as plt
 
 def rf_pred():
 
-    df = pd.read_csv("t_set.csv")
+    # read in training set
+    df = pd.read_csv("datasets/t_set.csv")
+
+    # replace Dataframe NaN values with 0 for nominal features
     df = df.fillna(0)
 
     X = df[['statuses_count', 'followers_count', 'friends_count', 'favourites_count', 'listed_count',
             'default_profile', 'default_profile_image', 'geo_enabled', 'profile_background_tile',
-            'protected', 'verified', 'notifications', 'contributors_enabled']]
+            'protected', 'verified']]
     y = df['bot']
 
-    # split the dataset
+    # split the dataset 70:30 for testing
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=10)
 
     print("Building Random Forest Model...")
@@ -41,8 +44,9 @@ def rf_pred():
 
     print("-- Model Complete --")
 
+    # Generate ROC-AUC Curve - Primarly for System Evaluation
     roc_prod = 1
-    print("Produce ROC-AUC Curve? (Testing Purpose)")
+    print("Produce ROC-AUC Curve? (System Evaluation)")
     print(" 1. Yes")
     print(" 2. No")
 
